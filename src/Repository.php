@@ -50,5 +50,5 @@ class Repository
         $updateBalance->bindValue(':updated_at', $date);
         $updateBalance->bindValue(':chat_id', $chatId);
         $updateBalance->execute();
-}
+    }
 }
