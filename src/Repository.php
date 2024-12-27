@@ -45,10 +45,10 @@ class Repository
         $sqlUpdateBalance = 'UPDATE users
                                     SET balance = :balance, updated_at = :updated_at
                                     WHERE chat_id = :chat_id';
-            $updateBalance = Connection::get()->connect()->prepare($sqlUpdateBalance);
-            $updateBalance->bindValue(':balance', $balance);
-            $updateBalance->bindValue(':updated_at', $date);
-            $updateBalance->bindValue(':chat_id', $chatId);
-            $updateBalance->execute();
-    }
+        $updateBalance = Connection::get()->connect()->prepare($sqlUpdateBalance);
+        $updateBalance->bindValue(':balance', $balance);
+        $updateBalance->bindValue(':updated_at', $date);
+        $updateBalance->bindValue(':chat_id', $chatId);
+        $updateBalance->execute();
+}
 }
