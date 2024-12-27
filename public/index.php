@@ -5,7 +5,7 @@ require_once "vendor/autoload.php";
 use App\Repository;
 use Carbon\Carbon;
 
-const TOKEN = 'YOUR TOKEN';
+const TOKEN = '';
 
 try {
     $bot = new \TelegramBot\Api\Client(TOKEN);
@@ -17,7 +17,13 @@ try {
 
         if (!$id) {
             Repository::addUser($chatId, $createdAt);
-            $answer = 'Добро пожаловать! Введите команду /help';
+            $answer = <<<TEXT
+                Добро пожаловать в телеграм-бот "Кошелёк"!
+                Для Вас создана учетная запись.
+                "Кошелёк" будет запоминать баланс счета при списании и пополнении.
+
+                Введите команду /help
+                TEXT;
             $bot->sendMessage($message->getChat()->getId(), $answer);
         }
         
