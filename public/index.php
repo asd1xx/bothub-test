@@ -5,7 +5,7 @@ require_once "vendor/autoload.php";
 use App\Repository;
 use Carbon\Carbon;
 
-const TOKEN = '';
+const TOKEN = '7730198992:AAFAFRUef9tb-YDqCe6lH6qCYGOQMOXFaME';
 
 try {
     $bot = new \TelegramBot\Api\Client(TOKEN);
